@@ -77,7 +77,7 @@ public class Lesson44Server extends BasicServer {
 
     private SampleDataModel getSampleDataModel() {
         // возвращаем экземпляр тестовой модели-данных
-        // которую freemarker будет использовать для наполнения шаблона
+        // которую freemarker будет использовать для наполнения шаблон
         return new SampleDataModel();
     }
 }

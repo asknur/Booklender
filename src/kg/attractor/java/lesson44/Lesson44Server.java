@@ -5,6 +5,8 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import freemarker.template.TemplateExceptionHandler;
+import kg.attractor.java.Homework44.BookHandler;
+import kg.attractor.java.Homework44.EmployeeHandler;
 import kg.attractor.java.server.BasicServer;
 import kg.attractor.java.server.ContentType;
 import kg.attractor.java.server.ResponseCodes;
@@ -17,6 +19,19 @@ public class Lesson44Server extends BasicServer {
     public Lesson44Server(String host, int port) throws IOException {
         super(host, port);
         registerGet("/sample", this::freemarkerSampleHandler);
+        registerGet("/books", exchange -> renderTemplate(exchange, "books.ftlh", BookHandler.handleBooks()));
+
+        registerGet("/book", exchange -> {
+            String query = exchange.getRequestURI().getQuery();
+            String id = query.split("=")[1];
+            renderTemplate(exchange, "book.ftlh", BookHandler.handleOneBook(id));
+        });
+
+        registerGet("/employee", exchange -> {
+            String query = exchange.getRequestURI().getQuery();
+            String id = query.split("=")[1];
+            renderTemplate(exchange, "employee.ftlh", EmployeeHandler.handleEmployee(id));
+        });
     }
 
     private static Configuration initFreeMarker() {
@@ -41,7 +56,7 @@ public class Lesson44Server extends BasicServer {
     }
 
     private void freemarkerSampleHandler(HttpExchange exchange) {
-        renderTemplate(exchange, "sample.html", getSampleDataModel());
+        renderTemplate(exchange, "sample.ftlh", getSampleDataModel());
     }
 
     protected void renderTemplate(HttpExchange exchange, String templateFile, Object dataModel) {

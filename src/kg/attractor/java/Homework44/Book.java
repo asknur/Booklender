@@ -1,4 +1,4 @@
-package Homework44;
+package kg.attractor.java.Homework44;
 
 public class Book {
     private String id;

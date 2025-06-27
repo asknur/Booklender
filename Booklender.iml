@@ -9,5 +9,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="freemarker" level="project" />
     <orderEntry type="library" name="vendor" level="project" />
+    <orderEntry type="library" name="gson-2.10.1" level="project" />
   </component>
 </module>

@@ -8,5 +8,15 @@
     "email": "hello@gmail.com",
     "fullName": "Aykol",
     "password": "qwertyu123456765433"
+  },
+  {
+    "email": "alex@alex.alex",
+    "fullName": "Alecsandr ",
+    "password": "qwerty12345"
+  },
+  {
+    "email": "mike@mike.mike",
+    "fullName": "mike",
+    "password": "qwerty12345"
   }
 ]

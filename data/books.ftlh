@@ -2,12 +2,19 @@
 <ul>
 <#list books as book>
     <li>
-        <a href="/book?id=${book.id}">${book.title}</a> — ${book.author}
+        ${book.title} - ${book.author}
         <#if book.taken>
-            (выдана <a href="/employee?id=${book.isTakenBy}">${book.isTakenBy}</a>)
+            <form method="post" action="/return">
+                <input type="hidden" name="id" value="${book.id}">
+                <button>Вернуть</button>
+            </form>
         <#else>
-            (в наличии)
+            <form method="post" action="/take">
+                <input type="hidden" name="id" value="${book.id}">
+                <button>Взять</button>
+            </form>
         </#if>
     </li>
 </#list>
 </ul>
+<a href="/logout">Выйти</a>

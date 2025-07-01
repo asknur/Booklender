@@ -1,4 +1,4 @@
-package kg.attractor.java.Homework45;
+package Homework45;
 
 public class User {
     private String email;

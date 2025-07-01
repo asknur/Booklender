@@ -1,4 +1,4 @@
-package kg.attractor.java.Homework44;
+package Homework44;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,14 +10,14 @@ public class BookHandler {
                 new Book("1", "Белый пароход", "Чингиз Торекулович Айтматов", true, "emp1"),
                 new Book("2", "Java для начинающих", "Г. Шилдт", false, null),
                 new Book("4", "Война и мир", "Лев Толстой", false, null),
-                new Book("5", "Преступление и наказание", "Фёдор Достоевский", true, "emp1"),
+                new Book("5", "Преступление и наказание", "Фёдор Достоевский", true, null),
                 new Book("6", "1984", "Джордж Оруэлл", false, null),
-                new Book("7", "Мастер и Маргарита", "Михаил Булгаков", true, "emp1"),
+                new Book("7", "Мастер и Маргарита", "Михаил Булгаков", true, null),
                 new Book("8", "Улисс", "Джеймс Джойс", false, null),
                 new Book("9", "Анна Каренина", "Лев Толстой", false, null),
                 new Book("10", "Идиот", "Фёдор Достоевский", true, "emp2"),
                 new Book("11", "Портрет Дориана Грея", "Оскар Уайльд", false, null),
-                new Book("12", "Три товарища", "Эрих Мария Ремарк", true, "emp2"),
+                new Book("12", "Три товарища", "Эрих Мария Ремарк", true, null),
                 new Book("13", "Герой нашего времени", "Михаил Лермонтов", false, null),
                 new Book("14", "Над пропастью во ржи", "Джером Сэлинджер", false, null),
                 new Book("15", "Приключение Тома Сойера", "Марк Твен", false, null)

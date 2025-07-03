@@ -6,13 +6,17 @@ public class Book {
     private String author;
     private boolean taken;
     private String isTakenBy;
+    private String description;
+    private String imageUrl;
 
-    public Book(String id, String title, String author, boolean taken, String isTakenBy) {
+    public Book(String id, String title, String author, boolean taken, String isTakenBy, String description, String imageUrl) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.taken = taken;
         this.isTakenBy = isTakenBy;
+        this.description = description;
+        this.imageUrl = imageUrl;
     }
 
     public String getId() {
@@ -53,5 +57,21 @@ public class Book {
 
     public void setIsTakenBy(String isTakenBy) {
         this.isTakenBy = isTakenBy;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageURL) {
+        this.imageUrl = imageUrl;
     }
 }

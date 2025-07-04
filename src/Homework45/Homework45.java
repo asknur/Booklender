@@ -1,5 +1,6 @@
 package Homework45;
 
+import Homework44.EmployeeHandler;
 import com.sun.net.httpserver.HttpExchange;
 import kg.attractor.java.lesson44.Lesson44Server;
 import kg.attractor.java.server.ContentType;
@@ -79,18 +80,17 @@ public class Homework45 extends Lesson44Server {
     }
 
     private void profileGet(HttpExchange exchange) {
-        Map<String, Object> model = new HashMap<>();
         String cookieStr = getCookies(exchange);
         Map<String, String> cookies = Cookie.parse(cookieStr);
         String sessionId = cookies.get("sessionId");
+
         User sessionUser = sessions.get(sessionId);
-        if (currentUser != null) {
-            model.put("email", currentUser.getEmail());
-            model.put("name", currentUser.getFullName());
-        } else {
-            model.put("email", "анонимный@mail.com");
-            model.put("name", "Некий пользователь");
+        if (sessionUser == null) {
+            redirect303(exchange, "/login");
+            return;
         }
+
+        Map<String, Object> model = EmployeeHandler.handleEmployee(sessionUser.getEmail());
         renderTemplate(exchange, "profile.ftlh", model);
 
 
